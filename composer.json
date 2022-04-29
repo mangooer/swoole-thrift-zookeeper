@@ -1,0 +1,24 @@
+{
+    "name": "mongooer/swoole-thrift-zookeeper",
+    "description": "swoole + thrift + zookeeper 实现 RPC微服务客户端服务端的集中管理",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mongooer\\SwooleThriftZookeeper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mongooer",
+            "email": "273311429@qq.com"
+        }
+    ],
+    "require": {
+        "ext-swoole": "*",
+        "ext-zookeeper": "*",
+        "apache/thrift": "^0.16.0"
+    },
+    "require-dev": {
+        "swoole/ide-helper": "@dev"
+    }
+}
