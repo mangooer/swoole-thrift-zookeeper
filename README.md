@@ -2,11 +2,11 @@
 ## 简介
 根据学院君的教程，自己整理了一下，做了一个简陋的微服务整合包
 ## 使用说明
-###1.安装  
- `mongooer/swoole-thrift-zookeeper`  
-###2.发布配置文件  
+### 1.安装  
+ `composer require mongooer/swoole-thrift-zookeeper`  
+### 2.发布配置文件  
  `php artisan vendor:publish --provider="Mongooer\SwooleThriftZookeeper\Providers\RpcServerProvider"`  
-###3.配置文件解读  
+### 3.配置文件解读  
 1.zookeeper注册中心
 ```
     /*
@@ -57,7 +57,7 @@
         ]
     ]
 ```
-###4.使用   
+### 4.使用   
 - 1.在你的环境中安装 Thrift ，安装在哪里无所谓，我们只用它生成的文件，注意最好注册进环境变量方便命令行使用。
 - 2.随便找个地方新建文件夹，在文件夹下新建Thrift文件，里面定义微服务所需要的接口。例如：test.thrift。
 ```
