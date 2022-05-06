@@ -55,7 +55,7 @@ class RpcServerRunner
                         'perms' => Zookeeper::PERM_ALL,
                         'scheme' => 'world',
                         'id' => 'anyone',
-                    ]]);
+                    ]],Zookeeper::EPHEMERAL | Zookeeper::SEQUENCE);
                 }
                 $nodes = $zkServer->get($node->getPath());
                 if (!$nodes) {
