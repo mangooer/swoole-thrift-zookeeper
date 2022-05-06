@@ -51,7 +51,7 @@ class RpcServerRunner
             foreach ($rpcServerBuilder->getNodeList() as $node) {
                 $zkServer = ZookeeperRpcCenter::getServer($node->getZookeeperChannel());
                 if (!$zkServer->exists($node->getPath())) {
-                    $zkServer->create($node->getPath(), null, [[
+                    $zkServer->create($node->getPath(), "", [[
                         'perms' => Zookeeper::PERM_ALL,
                         'scheme' => 'world',
                         'id' => 'anyone',

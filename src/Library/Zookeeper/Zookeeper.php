@@ -25,7 +25,7 @@ class Zookeeper implements ZookeeperInterface
         return $this->server->create($node, $contents, $acl, $flags);
     }
 
-    public function get(string $node, callable $watcherCallback = null, array &$stat = null, int $maxSize = 0): string
+    public function get(string $node, callable $watcherCallback = null, array &$stat = null, int $maxSize = 0)
     {
         return $this->server->get($node, $watcherCallback, $stat, $maxSize);
     }
@@ -35,7 +35,7 @@ class Zookeeper implements ZookeeperInterface
         return $this->server->set($node, $data);
     }
 
-    public function exists(string $node, ?callable $watcherCallback = null): bool
+    public function exists(string $node, ?callable $watcherCallback = null)
     {
         return $this->server->exists($node, $watcherCallback);
     }

@@ -1,6 +1,7 @@
 <?php
-
+namespace Mongooer\SwooleThriftZookeeper\Providers;
 use Illuminate\Support\ServiceProvider;
+use Mongooer\SwooleThriftZookeeper\RpcClientManager;
 
 class RpcServerProvider extends ServiceProvider
 {
@@ -13,7 +14,7 @@ class RpcServerProvider extends ServiceProvider
     {
         // 发布配置文件
         $this->publishes([
-            __DIR__ . '/../config/swoole_thrift_zookeeper.php' => config_path('swoole_thrift_zookeeper.php'),
+            __DIR__ . '/../../config/swoole_thrift_zookeeper.php' => config_path('swoole_thrift_zookeeper.php'),
         ]);
     }
 
@@ -29,6 +30,9 @@ class RpcServerProvider extends ServiceProvider
         });
         $this->app->singleton('ZookeeperRpcCenter', function ($app) {
             return new \Mongooer\SwooleThriftZookeeper\Library\Zookeeper\ZookeeperManager($app['config']);
+        });
+        $this->app->singleton('RpcClient', function ($app) {
+            return new RpcClientManager($app['config']);
         });
     }
 }

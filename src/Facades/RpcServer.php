@@ -2,10 +2,12 @@
 
 namespace Mongooer\SwooleThriftZookeeper\Facades;
 
+use Illuminate\Support\Facades\Facade;
+
 /**
  * @method static run()
  */
-class RpcServer
+class RpcServer extends Facade
 {
     protected static function getFacadeAccessor(): string
     {

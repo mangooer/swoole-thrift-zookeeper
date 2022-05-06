@@ -28,9 +28,8 @@ interface ZookeeperInterface
      * @param callable|null $watcherCallback
      * @param array|null $stat
      * @param int $maxSize
-     * @return string
      */
-    public function get(string $node, callable $watcherCallback = null, array &$stat = null, int $maxSize = 0): string;
+    public function get(string $node, callable $watcherCallback = null, array &$stat = null, int $maxSize = 0);
 
     /**
      * @param string $node
@@ -42,9 +41,8 @@ interface ZookeeperInterface
     /**
      * @param string $node
      * @param callable|null $watcherCallback
-     * @return bool
      */
-    public function exists(string $node, ?callable $watcherCallback = null): bool;
+    public function exists(string $node, ?callable $watcherCallback = null);
 
     /**
      * @param string $node
