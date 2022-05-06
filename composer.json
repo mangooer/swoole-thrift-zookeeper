@@ -20,5 +20,17 @@
     },
     "require-dev": {
         "swoole/ide-helper": "@dev"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mongooer\\SwooleThriftZookeeper\\Providers\\RpcServerProvider"
+            ],
+            "aliases": {
+                "RpcClient": "Mongooer\\SwooleThriftZookeeper\\Facades\\RpcClient",
+                "RpcServer": "Mongooer\\SwooleThriftZookeeper\\Facades\\RpcServer",
+                "ZookeeperRpcCenter": "Mongooer\\SwooleThriftZookeeper\\Facades\\ZookeeperRpcCenter"
+            }
+        }
     }
 }
